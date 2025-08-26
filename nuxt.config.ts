@@ -4,7 +4,8 @@ export default defineNuxtConfig({
     buildAssetsDir: '/_nuxt/'
   },
   css: ['~/assets/main.css'],
-  // Agrega esto para generar sitio estático correctamente
+  
+  // Agrega esta configuración para generar sitio estático
   ssr: true,
   nitro: {
     preset: 'static'
