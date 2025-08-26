@@ -1,7 +1,12 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: '/portafolio/', // El nombre de tu repositorio
+    baseURL: process.env.NODE_ENV === 'production' ? '/portafolio/' : '/',
     buildAssetsDir: '/_nuxt/'
   },
-  css: ['~/assets/main.css']
+  css: ['~/assets/main.css'],
+  // Agrega esto para generar sitio estático correctamente
+  ssr: true,
+  nitro: {
+    preset: 'static'
+  }
 })
